@@ -1,0 +1,29 @@
+* {
+    border: 1px solid red;
+}
+
+.header, #branding, .top-banner, .content, .footer, .header-links ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.header-links ul{
+    list-style-type: none;
+}
+
+.top-banner{
+    justify-content: center;
+}
+
+.content{
+    flex-flow: column;
+    gap: 1.5rem;
+    padding: 1.5rem;
+}
+
+.footer{
+    justify-content: center;
+}
