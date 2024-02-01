@@ -1,3 +1,7 @@
+:root {
+    --banner-height: 4rem;
+}
+
 * {
     border: 1px solid red;
 }
@@ -5,28 +9,54 @@
 html,body{
     margin:0;
     padding:0;
+    height: 110%;
+}
+
+.main {
+    margin-top: var(--banner-height);
+    margin-bottom: var(--banner-height);
+    flex-flow: column;
+    justify-content: center!important;
+    gap: 5rem!important;
     height: 100%;
 }
 
-.header, #branding, .top-banner, .content, .content>*, .footer, .header-links ul{
+.header, #branding, .main, .content-head, .content, .content>*, .footer, .header-links ul{
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
-    padding: 1rem;
     text-align: center;
 }
 
 .header, .footer {
-    position: -webkit-sticky;
+    height: var(--banner-height);
+    position: fixed;
+    width: 100%;
+    background-color: #0060a0;
 }
+
+.header{
+    top: 0;
+    left: 0;
+}
+
+.footer{
+    bottom: 0;
+    left: 0;
+}
+
 
 .header-links ul{
     list-style-type: none;
 }
 
-.top-banner{
+.content-head{
     justify-content: center;
+}
+
+.main > *{
+    width: 100%;
 }
 
 .content>*{
@@ -38,11 +68,7 @@ html,body{
     flex-flow: column;
     justify-content: center;
     gap: 1.5rem;
-    padding: 1.5rem;
     align-items: stretch;
-    min-height: 100%;
-    
-    
 }
 
 .footer{
