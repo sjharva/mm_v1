@@ -1,5 +1,7 @@
 :root {
     --banner-height: 4rem;
+    --theme-light-blue: #00a0e0;
+    --theme-medium-blue: #0080c0;
 }
 
 * {
@@ -9,84 +11,172 @@
 html,body{
     margin:0;
     padding:0;
-    height: 110%;
+    background-color: #eeeeee;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.header, .footer {
+    height: var(--banner-height);
+    box-sizing: border-box;
+    position: fixed;
+    left: 0;
+    width: 100%;
+    /* background-color: #0060a0; */
+    background-color: #00a0e0;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.header{
+    top: 0;
+    justify-content: space-between;
+}
+
+.footer{
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.nav{
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+    flex-flow: row wrap;
+    gap: 1rem;
+    border: 1px solid blue;
+    padding: 0;
+}
+
+#branding{
+    height: 100%;
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+#branding > .icon{
+    height: 70%;
+    width: auto;
 }
 
 .main {
     margin-top: var(--banner-height);
     margin-bottom: var(--banner-height);
-    flex-flow: column;
-    justify-content: center!important;
-    gap: 5rem!important;
-    height: 100%;
-}
-
-.header, #branding, .main, .content-head, .content, .content>*, .footer, .header-links ul{
     display: flex;
-    justify-content: space-between;
+    flex-flow: column;
+    justify-content: flex-start!important;
+    gap: 3rem!important;
+    height: 100%;
+    padding-top: 1rem;
+}
+
+.top{
+    display: flex;
+    flex-flow: column;
     align-items: center;
-    gap: 1rem;
-    text-align: center;
+    gap: 0.5rem;
 }
 
-.header, .footer {
-    height: var(--banner-height);
-    position: fixed;
-    width: 100%;
-    background-color: #0060a0;
-}
-
-.header{
-    top: 0;
-    left: 0;
-}
-
-.footer{
-    bottom: 0;
-    left: 0;
-}
-
-
-.header-links ul{
-    list-style-type: none;
-}
-
-.content-head{
+.content-main{
+    display: flex;
     justify-content: center;
+    flex-flow: row;
 }
 
-.main > *{
-    width: 100%;
-}
-
-.content>*{
+.sub{
+    display: flex;
     justify-content: center;
+    flex-flow: row;
     gap: 2rem;
 }
 
-.content{
-    flex-flow: column;
-    justify-content: center;
-    gap: 1.5rem;
-    align-items: stretch;
-}
 
-.footer{
-    justify-content: center;
-}
-
-.link-btn {
+.link-btn, .selection-btn {
     border-radius: 0.25rem;
     font-family: Helvetica, Arial, sans-serif;
     font-size: 1rem;
     font-weight: bolder;
     text-decoration: none;
-    background-color: #0060a0;
+    background-color: var(--theme-light-blue);
     color: #ffffff;
     padding: 0.25rem 1rem;
     cursor: pointer;
 }
 
+.header .link-btn{
+    padding: 0.125rem 0.25rem;
+    font-weight: bold;
+    font-size: 0.75rem;
+}
+
 .link-btn:hover {
-    background-color: #004080;
+    background-color: var(--theme-medium-blue);
+}
+
+.game-list{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 3rem;
+    row-gap: 1rem;
+    padding: 1rem 10rem;
+}
+/* 
+.game-list{
+    display: -ms-inline-grid;
+    grid-area: auto;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3rem;
+    row-gap: 1rem;
+    padding: 1rem;
+} */
+
+.gamecard{
+    display: flex;
+    flex-flow: column;
+    border: 1px solid var(--theme-medium-blue)!important;
+    border-radius: 0.25rem;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+    padding: 0.5rem;
+    /* width: fit-content;
+    max-width: 20rem; */
+    max-width: 20rem;
+    flex: 1 1 0;
+    background-color: #D0D0D0;
+}
+
+.game-selector{
+    display: flex;
+    flex-flow: row;
+    gap: 1rem;
+}
+
+.selection-btn{
+    display: flex;
+    display: flex;
+    flex-flow: row;
+    gap: 0.25rem!important;
+}
+
+.text-section{
+    display:flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+p {
+    width: 50%;
+    min-width: 200px;
+    text-align: justify;
+    margin: 0rem;
 }
