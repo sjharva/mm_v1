@@ -74,6 +74,11 @@ html,body{
     .link-btn {
         font-size: 2vw!important;
     }
+
+    .top-text{
+        font-size: 2rem!important;
+        width: 80%!important;
+    }
 }
 
 #branding{
@@ -103,10 +108,11 @@ html,body{
 .top-text{
     text-align: center;
     font-style: italic;
-    font-size: 8vw;
+    font-size: 6vw;
     font-weight:bolder;
     /* color: var(--theme-dark-blue); */
     color: black;
+    width: 65%;
     /* text-shadow: 0vw 0vw 0.1vw #000000; */
 }
 
@@ -228,8 +234,19 @@ html,body{
 }
 
 p {
-    width: 50%;
-    min-width: 200px;
+    width: 60%;
+    min-width: 250px;
     text-align: justify;
     margin: 0rem;
+}
+
+.content-rules{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 2rem;
+}
+.rules-desc{
+    width: 60%;
+    min-width: 250px;;
 }
