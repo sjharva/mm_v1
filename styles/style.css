@@ -1,7 +1,8 @@
 :root {
-    --banner-height: 4rem;
+    --banner-height: 5rem;
     --theme-light-blue: #00a0e0;
     --theme-medium-blue: #0080c0;
+    --theme-dark-blue: #004080;
 }
 
 * {
@@ -11,8 +12,10 @@
 html,body{
     margin:0;
     padding:0;
-    background-color: #eeeeee;
+    background-color: #e8e8e8;
+    border: 1px solid black!important;
     font-family: Helvetica, Arial, sans-serif;
+    width: 100%;
 }
 
 .header, .footer {
@@ -22,7 +25,7 @@ html,body{
     left: 0;
     width: 100%;
     /* background-color: #0060a0; */
-    background-color: #00a0e0;
+    background-color: var(--theme-medium-blue);
     display: flex;
     flex-flow: row;
     align-items: center;
@@ -44,11 +47,33 @@ html,body{
 .nav{
     list-style-type: none;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-evenly;
     flex-flow: row wrap;
     gap: 1rem;
     border: 1px solid blue;
     padding: 0;
+}
+
+@media screen and (max-width: 500px) {
+    .nav > .link-btn {
+        font-size: 2vw!important;
+    }
+
+    .header .link-btn{
+        font-size: 0.6rem!important;
+    }
+
+    #branding > .icon{
+        height: 1rem!important;
+    }
+
+    .content-main > * {
+        font-size: 3vw!important;
+    }
+
+    .link-btn {
+        font-size: 2vw!important;
+    }
 }
 
 #branding{
@@ -58,11 +83,31 @@ html,body{
     justify-content: flex-start;
     align-items: center;
     gap: 0.5rem;
+    flex: 0 0 auto;
 }
 
 #branding > .icon{
     height: 70%;
     width: auto;
+}
+
+#brand-name {
+    flex: 0 0 auto;
+}
+
+#brand-name a{
+    /* text-align: left; */
+    padding: 0px;
+}
+
+.top-text{
+    text-align: center;
+    font-style: italic;
+    font-size: 8vw;
+    font-weight:bolder;
+    /* color: var(--theme-dark-blue); */
+    color: black;
+    /* text-shadow: 0vw 0vw 0.1vw #000000; */
 }
 
 .main {
@@ -71,12 +116,12 @@ html,body{
     display: flex;
     flex-flow: column;
     justify-content: flex-start!important;
-    gap: 3rem!important;
-    height: 100%;
-    padding-top: 1rem;
+    gap: 2rem!important;
+    height: 10%;
+    padding: 1rem 10%;
 }
 
-.top{
+.content-top{
     display: flex;
     flex-flow: column;
     align-items: center;
@@ -85,38 +130,63 @@ html,body{
 
 .content-main{
     display: flex;
-    justify-content: center;
-    flex-flow: row;
+    flex-flow: column;
+    align-items: center;
 }
 
-.sub{
+.content-main p {
+    font-weight: bold;
+    font-size: 2vw;
+    /* color: var(--theme-dark-blue); */
+    color: black;
+    width: 55%!important;
+}
+
+.content-sub{
     display: flex;
     justify-content: center;
     flex-flow: row;
     gap: 2rem;
+    margin-top: 4rem;
 }
 
 
-.link-btn, .selection-btn {
+.link-btn {
     border-radius: 0.25rem;
     font-family: Helvetica, Arial, sans-serif;
     font-size: 1rem;
     font-weight: bolder;
     text-decoration: none;
-    background-color: var(--theme-light-blue);
+    background-color: var(--theme-medium-blue);
     color: #ffffff;
     padding: 0.25rem 1rem;
     cursor: pointer;
 }
 
+.selection-btn {
+    border-radius: 0.25rem;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: bolder;
+    text-decoration: none;
+    background-color: var(--theme-medium-blue);
+    color: #ffffff;
+    padding: 0.25rem 1rem;
+    cursor: pointer;
+    display: flex;
+    display: flex;
+    flex-flow: row;
+    gap: 0.25rem!important;
+}
+
 .header .link-btn{
     padding: 0.125rem 0.25rem;
     font-weight: bold;
-    font-size: 0.75rem;
+    font-size: 0.9rem;
 }
 
 .link-btn:hover {
-    background-color: var(--theme-medium-blue);
+    background-color: var(--theme-dark-blue);
 }
 
 .game-list{
@@ -124,32 +194,22 @@ html,body{
     flex-flow: row wrap;
     justify-content: center;
     align-items: flex-start;
-    gap: 3rem;
+    gap: 10%;
     row-gap: 1rem;
-    padding: 1rem 10rem;
+    padding: 1rem 10%;
 }
-/* 
-.game-list{
-    display: -ms-inline-grid;
-    grid-area: auto;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 3rem;
-    row-gap: 1rem;
-    padding: 1rem;
-} */
 
 .gamecard{
     display: flex;
     flex-flow: column;
-    border: 1px solid var(--theme-medium-blue)!important;
+    border: 1px solid var(--theme-dark-blue)!important;
     border-radius: 0.25rem;
     align-items: center;
     justify-content: flex-start;
-    gap: 1rem;
+    gap: 0.5rem;
     padding: 0.5rem;
-    /* width: fit-content;
-    max-width: 20rem; */
     max-width: 20rem;
+    min-width: 250px;
     flex: 1 1 0;
     background-color: #D0D0D0;
 }
@@ -157,14 +217,7 @@ html,body{
 .game-selector{
     display: flex;
     flex-flow: row;
-    gap: 1rem;
-}
-
-.selection-btn{
-    display: flex;
-    display: flex;
-    flex-flow: row;
-    gap: 0.25rem!important;
+    gap: 0.5rem;
 }
 
 .text-section{
