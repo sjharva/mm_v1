@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./signup-form.css">
+    <link rel="icon" type="image/svg" href="./images/bb-trace-orange.svg">
+    <title>Signup Form Template</title>
+</head>
+<body>
+    <form action="" method="post">
+        <label for="first_name">First Name:</label>
+        <input type="text" id="first_name" name="first_name">
+        <label for="last_name">Last Name:</label>
+        <input type="text" id="last_name" name="last_name">
+        <label for="username">* Username:</label>
+        <input type="text" id="username" name="username" required minlength="8" maxlength="30">
+        <label for="email_address">* Email Address:</label>
+        <input type="email" id="email_address" name="email_address" required>
+        <label for="password">* Password:</label>
+        <input type="password" id="password" name="password" required minlength="8" maxlength="30">
+        <label for="pswd_confirm">* Confirm Password:</label>
+        <input type="password" id="pswd_confirm" required minlength="8" maxlength="30">
+
+        <button type="submit">Sign Up</button>
+        
+    </form>
+</body>
+</html>
