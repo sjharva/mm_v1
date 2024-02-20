@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="icon" type="image/svg" href="../images/bb-trace-orange.svg">
+    <title>Eburg March Madness</title>
+</head>
+<body>
+    <header class="header">
+        <div id="branding">
+            <img class="icon" src="../images/bb-trace-orange.svg" alt="#logo .icon">
+            <div id="brand-name"><a class="link-btn" href="../index.html">Eburg March Madness</a></div>
+        </div>
+        <div class="nav">
+            <a class="link-btn user" href="../pages/login.html">Login</a>
+            <a class="link-btn" href="../pages/picks.html" >Picks</a>
+            <a class="link-btn" href="../pages/standings.html" >Standings</a>
+            <a class="link-btn" href="../pages/rules.html" >Rules</a>
+        </div>
+    </header>
+    <div class="main">
+        <div class="content-top">
+            <div class="text-section">
+                <h1>Get In The Game!</h1>
+            </div>
+        </div>
+        <div class="content">
+           <div>Signup form prototype. Requires backend functionality to actually register users.</div>
+            <div class="form-container signup-container">
+                <h2>New User Registration</h2>
+                <div class="form-rule"><span class="red-asterisk">*</span> Indicates Required Field</div>
+                <form action="" method="post" id="signup-form" class="">
+                    <div class="form-field">
+                        <label for="first_name">First Name</label>
+                        <input type="text" id="first_name" name="first_name">
+                    </div>
+                    <div class="form-field">
+                        <label for="last_name">Last Name</label>
+                        <input type="text" id="last_name" name="last_name">
+                    </div>
+                    <div class="form-field">
+                        <label for="email_address"><span class="red-asterisk">*</span> Email Address</label>
+                        <input type="email" id="email_address" name="email_address" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="username"><span class="red-asterisk">*</span> Username</label>
+                        <input type="text" id="username" name="username" required minlength="8" maxlength="30" placeholder>
+                        <div class="field-alert field-hint">Length: 8 to 30 characters</div>
+                    </div>
+                    <div class="form-field">
+                        <label for="password"><span class="red-asterisk">*</span> Password</label>
+                        <input type="password" id="password" name="password" required minlength="8" maxlength="30" placeholder>
+                        <div class="field-alert field-hint">Length: 8 to 30 characters</div>
+                    </div>
+                    <div class="form-field">
+                        <label for="password-confirm"><span class="red-asterisk">*</span> Confirm Password</label>
+                        <input type="password" id="password-confirm" required minlength="8" maxlength="30" placeholder>
+                        <div class="field-alert field-hint">Length: 8 to 30 characters</div>
+                        <div class="field-alert field-error">Passwords do not match!</div>
+                    </div>
+                </form>
+                <div class="form-buttons">
+                        <button type="submit" form="signup-form">Sign Up</button>
+                        <!-- <button type="menu" form="signup-form">Sign Up</button> -->
+                </div>
+            </div>
+            <div class="login-redirect">Already signed up? <a class="user" href="../pages/login.html">Login Here</a></div>
+    </div>
+        
+    </div>
+    <div class="footer">footer placeholder</div>
+    <script src="../scripts/signup-form.js"></script>
+</body>
+</html>

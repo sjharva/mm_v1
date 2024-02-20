@@ -8,22 +8,44 @@
     <title>Signup Form Template</title>
 </head>
 <body>
-    <form action="" method="post">
-        <label for="first_name">First Name:</label>
-        <input type="text" id="first_name" name="first_name">
-        <label for="last_name">Last Name:</label>
-        <input type="text" id="last_name" name="last_name">
-        <label for="username">* Username:</label>
-        <input type="text" id="username" name="username" required minlength="8" maxlength="30">
-        <label for="email_address">* Email Address:</label>
-        <input type="email" id="email_address" name="email_address" required>
-        <label for="password">* Password:</label>
-        <input type="password" id="password" name="password" required minlength="8" maxlength="30">
-        <label for="pswd_confirm">* Confirm Password:</label>
-        <input type="password" id="pswd_confirm" required minlength="8" maxlength="30">
-
-        <button type="submit">Sign Up</button>
-        
-    </form>
+    <div class="form-container signup-container">
+        <h2>New User Registration</h2>
+        <div class="form-rule"><span class="red-asterisk">*</span> Indicates Required Field</div>
+        <form action="" method="post" id="signup-form" class="">
+            <div class="form-field">
+                <label for="first_name">First Name</label>
+                <input type="text" id="first_name" name="first_name">
+            </div>
+            <div class="form-field">
+                <label for="last_name">Last Name</label>
+                <input type="text" id="last_name" name="last_name">
+            </div>
+            <div class="form-field">
+                <label for="email_address"><span class="red-asterisk">*</span> Email Address</label>
+                <input type="email" id="email_address" name="email_address" required>
+            </div>
+            <div class="form-field">
+                <label for="username"><span class="red-asterisk">*</span> Username</label>
+                <input type="text" id="username" name="username" required minlength="8" maxlength="30" placeholder>
+                <div class="field-alert field-hint">Length: 8 to 30 characters</div>
+            </div>
+            <div class="form-field">
+                <label for="password"><span class="red-asterisk">*</span> Password</label>
+                <input type="password" id="password" name="password" required minlength="8" maxlength="30" placeholder>
+                <div class="field-alert field-hint">Length: 8 to 30 characters</div>
+            </div>
+            <div class="form-field">
+                <label for="password-confirm"><span class="red-asterisk">*</span> Confirm Password</label>
+                <input type="password" id="password-confirm" required minlength="8" maxlength="30" placeholder>
+                <div class="field-alert field-hint">Length: 8 to 30 characters</div>
+                <div class="field-alert field-error">Passwords do not match!</div>
+            </div>
+        </form>
+        <div class="form-buttons">
+                <button type="submit" form="signup-form">Sign Up</button>
+                <!-- <button type="menu" form="signup-form">Sign Up</button> -->
+        </div>
+    </div>
+    <script src="./signup-form.js"></script>
 </body>
 </html>
